@@ -59,7 +59,7 @@ module.exports = {
       }
     }
   ],
-  '148-1-3': [
+  '328-1-3': [
     { // EUROtronic Spirit
       type: 'climate',
       object_id: 'thermostat',
