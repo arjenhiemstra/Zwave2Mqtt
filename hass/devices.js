@@ -59,6 +59,27 @@ module.exports = {
       }
     }
   ],
+  '148-1-3': [
+    { // EUROtronic Spirit
+      type: 'climate',
+      object_id: 'thermostat',
+      values: ['64-1-0', '49-1-1', '67-1-1', '67-1-11'],
+      mode_map: { 'Off': 'Off', 'Heat': 'Heat (Default)', 'Heat Eco': 'Heat (Eco)' },
+      setpoint_topic: { "Heat (Default)": '67-1-1', "Heat (Eco)": '67-1-11' },
+      default_setpoint: '67-1-1',
+      discovery_payload: {
+        min_temp: 11,
+        max_temp: 25,
+        modes: ['Off', 'Heat', 'Heat Eco'],
+        mode_state_topic: '64-1-0',
+        mode_command_topic: true,
+        current_temperature_topic: '49-1-1',
+        current_temperature_template: '{{ value_json.value }}',
+        temperature_state_template: '{{ value_json.value }}',
+        temperature_command_topic: true
+      }
+    }
+  ],  
   '99-12340-18756': [FAN_DIMMER], // GE 1724 Dimmer
   '99-12593-18756': [FAN_DIMMER] // GE 1724 Dimmer
 }
